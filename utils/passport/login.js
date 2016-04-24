@@ -11,7 +11,7 @@ export default (passport) => {
         passReqToCallback: true
       },
       (req, user, pass, done)=> {
-
+        
       }
     )
   );
