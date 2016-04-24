@@ -1,4 +1,5 @@
 import local from 'passport-local';
+import db from 'db';
 import bCrypt from 'bCrypt';
 
 const LocalStrategy = local.Strategy;
