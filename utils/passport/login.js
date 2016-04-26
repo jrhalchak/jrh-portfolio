@@ -3,7 +3,7 @@ import local from 'passport-local';
 import db from '../../db';
 import bCrypt from 'bcrypt-nodejs';
 import providers from '../providers';
-import user from '../../models/user';
+import User from '../../models/user';
 
 const LocalStrategy = local.Strategy;
 
@@ -14,10 +14,7 @@ export default (passport) => {
         passReqToCallback: true
       },
       (req, username, pass, done)=> {
-        console.log(`user: ${username} - pass: ${pass}`);
-        console.log(user);
-        
-        user.findOne({ $or: [{username: username}, {email: username}]}, (err, result)=>{
+        User.findOne({ $or: [{username: username}, {email: username}]}, (err, result)=>{
           if(!result) return done(null, false,{ loginMessage: 'No user found.' });
 
           if(bCrypt.compareSync(pass, result.password)) {
