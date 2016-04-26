@@ -14,6 +14,9 @@ export default (passport) => {
         passReqToCallback: true
       },
       (req, username, pass, done)=> {
+        console.log(`user: ${username} - pass: ${pass}`);
+        console.log(user);
+        
         user.findOne({ $or: [{username: username}, {email: username}]}, (err, result)=>{
           if(!result) return done(null, false,{ loginMessage: 'No user found.' });
 
