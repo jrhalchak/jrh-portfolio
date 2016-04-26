@@ -1,9 +1,12 @@
 import mongoose from 'mongoose';
 
-var dbURI = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD + process.env.DB_PATH}`;
-console.log(dbURI);
+const dbURI = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD + process.env.DB_PATH}`,
+  dbOptions = {
+    server: { socketOptions: { keepAlive: 1000, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1000, connectTimeoutMS: 30000 } }
+  };
 
-mongoose.connect(dbURI, { keepAlive: 1000, connectTimeoutMS: 30000 });
+mongoose.connect(dbURI, dbOptions);
 
 mongoose.connection
   .on('connected', ()=> console.log(`Mongoose connected ${dbURI}`))
