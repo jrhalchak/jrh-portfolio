@@ -19,7 +19,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/login', helpers.sendUserToApp, function(req, res, next) {
     // Redirect to login/home if
-    applyLoginMessage(req);
     res.render('login', viewModel);
 });
 
@@ -28,7 +27,5 @@ router.post('/login', passport.authenticate('login', {
     successRedirect: '/admin',
     failureRedirect: '/login'
 }));
-
-function applyLoginMessage(req) { viewModel.loginMessage = ''; }
 
 export default router;
