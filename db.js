@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 var dbURI = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD + process.env.DB_PATH}`;
+console.log(dbURI);
 
 mongoose.connect(dbURI);
 
