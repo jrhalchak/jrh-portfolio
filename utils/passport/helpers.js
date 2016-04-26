@@ -3,7 +3,7 @@ export default {
     if(req.isAuthenticated()){
       return next();
     } else {
-        res.redirect('/login');
+      res.redirect('/login');
     }
   },
   sendUserToApp: function(req, res, next) {
