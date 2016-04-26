@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <% if(typeof title !== 'undefined') { %>
+      <title><%= title %></title>
+    <% } else { %>
+      <title>JRH Portfolio</title>
+    <% } %>
     <link rel='stylesheet' href='/main/stylesheets/style.css' />
   </head>
   <body>

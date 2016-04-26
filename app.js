@@ -6,6 +6,9 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import partials from 'express-partials';
+import passport from 'passport';
+import initPassport from './utils/passport/init';
+import session from 'express-session';
 
 import routes from './routes/index';
 import admin from './routes/admin';
@@ -28,9 +31,19 @@ app
   .use(express.static(path.join(__dirname, 'public')))
   .use(partials());
 
+initPassport(passport);
+
+app
+  .use(session({ secret: process.env.SESSION_SECRET }))
+  .use(passport.initialize())
+  .use(passport.session());
+
+
+// Routes
 app
   .use('/', routes)
   .use('/admin', admin); // put middleware here
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

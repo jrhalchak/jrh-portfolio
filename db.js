@@ -5,7 +5,7 @@ var dbURI = `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD + proces
 mongoose.connect(dbURI);
 
 mongoose.connection
-  .on('connected', ()=> console.log(`Mongoose connected`))
+  .on('connected', ()=> console.log(`Mongoose connected ${dbURI}`))
   .on('disconnected', ()=> console.log(`Mongoose disconnected`))
   .on('error', (err)=> console.log(`Mongoose error: ${err}`));
 
