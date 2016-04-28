@@ -1,0 +1,6 @@
+extends ../layout
+
+block content
+  each page in pages
+    div
+      a(href='/admin/page/edit/#{page._id}')= page.title

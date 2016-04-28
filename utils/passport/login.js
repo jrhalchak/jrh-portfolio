@@ -15,7 +15,7 @@ export default (passport) => {
       },
       (req, username, pass, done)=> {
         User.findOne({ $or: [{username: username}, {email: username}]}, (err, result)=>{
-          if(!result) return done(null, false,{ loginMessage: 'No user found.' });
+          if(!result) return done(null, false, { loginMessage: 'No user found.' });
 
           if(bCrypt.compareSync(pass, result.password)) {
             return done(null, result);

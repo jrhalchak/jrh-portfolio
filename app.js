@@ -1,25 +1,24 @@
 import express from 'express';
-import stylus from 'stylus';
 import path from 'path';
 import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import partials from 'express-partials';
 import passport from 'passport';
 import initPassport from './utils/passport/init';
 import session from 'express-session';
 
+import db from './db';
+
 import routes from './routes/index';
 import admin from './routes/admin';
-import db from './db';
 
 var app = express();
 
 // view engine setup
 app
   .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs');
+  .set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -28,8 +27,7 @@ app
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: false }))
   .use(cookieParser())
-  .use(express.static(path.join(__dirname, 'public')))
-  .use(partials());
+  .use(express.static(path.join(__dirname, 'public')));
 
 initPassport(passport);
 
@@ -41,8 +39,8 @@ app
 
 // Routes
 app
-  .use('/', routes)
-  .use('/admin', admin); // put middleware here
+.use('/', routes)
+  .use('/admin', admin);
 
 
 // catch 404 and forward to error handler

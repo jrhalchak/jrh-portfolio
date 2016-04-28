@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  form(method='POST' action='/admin/page/edit/#{pages[0]._id}')
+    label(for='page_title') Page Title
+      input(id='page_title' name='page_title' value=pages[0].title)
+    label(for='page_body') Page Body
+      textarea(id='page_body' name='page_body')= pages[0].body
+    label(for='page_type')
+      select(id='page_type' name='page_type')
+        option(value='content' selected=(pages[0].pageType == 'content' ? true : undefined)) Content
+        option(value='entries' selected=(pages[0].pageType == 'entries' ? true : undefined)) Entries
+    label(for='page_bg_css') Page Background CSS Property
+      input(id='page_bg_css' name='page_bg_css' value= pages[0].pageBgCSS)
+    button(type='submit') Update!
