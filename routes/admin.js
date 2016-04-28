@@ -13,7 +13,7 @@ router.get('/', helpers.isAuthenticated, function(req, res, next) {
   providers.page.getPageList((err, pageResults)=> {
     if(err) console.log(err);
     //get entries here
-    proivders.entry.getEntryList((err, entryResults)=> {
+    providers.entry.getEntryList((err, entryResults)=> {
         if(err) console.log(err);
         viewModel.pages = pageResults;
         viewModel.entries = entryResults;
