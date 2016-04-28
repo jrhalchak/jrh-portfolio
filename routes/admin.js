@@ -60,7 +60,7 @@ router.get('/entry/edit/:id', helpers.isAuthenticated, (req,res,next)=>{
       return;
     } else {
       viewModel.pages[0] = result;
-      res.render('admin/edit_page', viewModel);
+      res.render('admin/edit_entry', viewModel);
     }
   });
 });
@@ -74,7 +74,9 @@ router.post('/entry/edit/:id', helpers.isAuthenticated, (req,res,next)=>{
     } else {
       result.title = req.body.entry_title || result.title;
       result.body =  req.body.entry_body || result.body;
-      result.entryBgCSS =  req.body.entry_bg_css || result.entryBgCSS;
+      result.imageUrl =  req.body.entry_image_url || result.imageUrl;
+      result.link =  req.body.entry_link || result.link;
+      result.codeLink =  req.body.entry_code_link || result.codeLink;
       result.save();
       res.redirect('/admin');
     }

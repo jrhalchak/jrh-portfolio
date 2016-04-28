@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  form(method='POST' action='/admin/entry/edit/#{entrys[0]._id}')
+    label(for='entry_title') Entry Title
+      input(id='entry_title' name='entry_title' value=entry[0].title)
+    label(for='entry_body') Entry Body
+      textarea(id='entry_body' name='entry_body')= entrys[0].body
+    label(for='entry_image_url') Entry Image URL
+      input(id='entry_image_url' name='entry_image_url' value= entrys[0].imageUrl)
+    label(for='entry_link') Entry Link
+      input(id='entry_link' name='entry_link' value= entrys[0].link)
+    label(for='entry_code_link') Entry Code-Link
+      input(id='entry_code_link' name='entry_code_link' value= entrys[0].codeLink)
+    button(type='submit') Update!

@@ -4,7 +4,8 @@ let entrySchema = new mongoose.Schema({
   title: String,
   body: String,
   imageUrl: String,
-  links: [String]
+  link: String,
+  codeLink: String
 });
 
 export default mongoose.model('entry', entrySchema);
