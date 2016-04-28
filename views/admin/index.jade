@@ -1,6 +1,12 @@
 extends ../layout
 
 block content
-  each page in pages
-    div
-      a(href='/admin/page/edit/#{page._id}')= page.title
+  .row
+    .grid-1-2
+      each page in pages
+        div
+          a(href='/admin/page/edit/#{page._id}')= page.title
+    .grid-1-2
+      each entry in entries
+        div
+          a(href='/admin/entry/edit/#{entry._id}')= entry.title

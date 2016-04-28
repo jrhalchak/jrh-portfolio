@@ -8,7 +8,7 @@ export default {
       callback(err, results);
     });
   },
-  getPageById: (id, callback)=> {
+  getEntryById: (id, callback)=> {
     Entry.findOne({ _id: id }, (err, result)=> {
       if(err) console.log(`Error: ${err}`);
       callback(err, result);

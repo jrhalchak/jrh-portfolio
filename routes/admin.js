@@ -10,10 +10,12 @@ const router = express.Router(),
 
 /* GET users listing. */
 router.get('/', helpers.isAuthenticated, function(req, res, next) {
-  providers.page.getPageList((err, result)=> {
+  providers.page.getPageList((err, pageResults)=> {
     if(err) console.log(err);
     //get entries here
-    viewModel.pages = result;
+    proivders.entry.getEntryList((err, entryResults))
+    viewModel.pages = pageResults;
+    viewModel.entries = entryResults;
     res.render('admin/index', viewModel);
   });
 });
