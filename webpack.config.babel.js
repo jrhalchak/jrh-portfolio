@@ -12,7 +12,8 @@ if (global.Promise === null) {
 export default {
     entry: {
         layout: ['layout.js', 'styles.sass'],
-        entries: ['entries.js']
+        entries: ['entries.js'],
+        commits: ['commits.js']
     },
     output: {
         path: __dirname + '/public/',
@@ -56,8 +57,10 @@ export default {
             // add glob someday
             Path.resolve('./public/main/javascripts/shared'),
             Path.resolve('./public/main/javascripts/entries'),
+            Path.resolve('./public/main/javascripts/commits'),
             Path.resolve('./public/main/javascripts/shared/modules'),
             Path.resolve('./public/main/javascripts/entries/modules'),
+            Path.resolve('./public/main/javascripts/commits/modules'),
             Path.resolve('./public/main/')
         ],
         // "import 'file'" instead of "import 'file.js'"

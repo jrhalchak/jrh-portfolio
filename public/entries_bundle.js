@@ -40,29 +40,50 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(1);
+	module.exports = __webpack_require__(146);
 
 
 /***/ },
-/* 1 */
+
+/***/ 33:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = function (module) {
+		if (!module.webpackPolyfill) {
+			module.deprecate = function () {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	};
+
+/***/ },
+
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _entriesController = __webpack_require__(2);
+	var _entriesController = __webpack_require__(147);
 
 	var _entriesController2 = _interopRequireDefault(_entriesController);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_entriesController2.default.initApp($('.js-entriesAppContainer')[0]); // for external integration with charting use https://api.github.com/search/repositories?q=%20+fork:true+user:jrhalchak
+	_entriesController2.default.initApp($('.js-entriesAppContainer')[0]);
 
 /***/ },
-/* 2 */
+
+/***/ 147:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71,11 +92,11 @@
 	  value: true
 	});
 
-	var _simplePubSub = __webpack_require__(3);
+	var _simplePubSub = __webpack_require__(148);
 
 	var _simplePubSub2 = _interopRequireDefault(_simplePubSub);
 
-	var _EntryStateContainer = __webpack_require__(5);
+	var _EntryStateContainer = __webpack_require__(149);
 
 	var _EntryStateContainer2 = _interopRequireDefault(_EntryStateContainer);
 
@@ -121,7 +142,8 @@
 	};
 
 /***/ },
-/* 3 */
+
+/***/ 148:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {'use strict';
@@ -222,27 +244,11 @@
 
 	  return new SimplePubSub();
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
 
 /***/ },
-/* 4 */
-/***/ function(module, exports) {
 
-	"use strict";
-
-	module.exports = function (module) {
-		if (!module.webpackPolyfill) {
-			module.deprecate = function () {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	};
-
-/***/ },
-/* 5 */
+/***/ 149:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -253,15 +259,15 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _simplePubSub = __webpack_require__(3);
+	var _simplePubSub = __webpack_require__(148);
 
 	var _simplePubSub2 = _interopRequireDefault(_simplePubSub);
 
-	var _EntryListItem = __webpack_require__(6);
+	var _EntryListItem = __webpack_require__(150);
 
 	var _EntryListItem2 = _interopRequireDefault(_EntryListItem);
 
-	var _idgen = __webpack_require__(9);
+	var _idgen = __webpack_require__(153);
 
 	var _idgen2 = _interopRequireDefault(_idgen);
 
@@ -325,7 +331,8 @@
 	exports.default = EntryStateContainer;
 
 /***/ },
-/* 6 */
+
+/***/ 150:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -336,11 +343,11 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _EntryListItemImage = __webpack_require__(7);
+	var _EntryListItemImage = __webpack_require__(151);
 
 	var _EntryListItemImage2 = _interopRequireDefault(_EntryListItemImage);
 
-	var _EntryListItemContent = __webpack_require__(8);
+	var _EntryListItemContent = __webpack_require__(152);
 
 	var _EntryListItemContent2 = _interopRequireDefault(_EntryListItemContent);
 
@@ -385,7 +392,8 @@
 	exports.default = EntryListItem;
 
 /***/ },
-/* 7 */
+
+/***/ 151:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -448,7 +456,8 @@
 	exports.default = EntryListItemImage;
 
 /***/ },
-/* 8 */
+
+/***/ 152:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -489,7 +498,7 @@
 
 	      return React.createElement(
 	        'div',
-	        { className: 'entry-list__item-content' },
+	        { className: 'entry-list__item-content u-cf' },
 	        React.createElement(
 	          'div',
 	          { className: 'entry-list__title' },
@@ -511,7 +520,8 @@
 	exports.default = EntryListItemContent;
 
 /***/ },
-/* 9 */
+
+/***/ 153:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -540,4 +550,5 @@
 	};
 
 /***/ }
-/******/ ]);
+
+/******/ });

@@ -8,7 +8,7 @@ export default class EntryListItemContent extends React.Component {
   render() {
     var c = this.props.item;
 
-    return <div className='entry-list__item-content'>
+    return <div className='entry-list__item-content u-cf'>
       <div className='entry-list__title'>{c.title}</div>
       <div className='entry-list__body' dangerouslySetInnerHTML={{__html: c.body}}></div>
       <div className='entry-list__more-button' onClick={this.handleClick.bind(this)} data-id={c._id}>{this.props.selected ? 'Collapse' : 'Read More'}</div>

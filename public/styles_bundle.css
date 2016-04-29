@@ -296,3 +296,17 @@ button[type='submit'] {
 
 .u-mRight30 {
   margin-right: 30px; }
+
+.u-floatRight {
+  float: right; }
+
+.u-floatLeft {
+  float: left; }
+
+.u-clearfix:before, .u-clearfix:after, .u-cf:before, .u-cf:after {
+  display: table;
+  content: ''; }
+
+.u-clearfix:after, .u-cf:after {
+  width: 100%;
+  clear: both; }
