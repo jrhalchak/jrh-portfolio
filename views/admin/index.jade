@@ -3,10 +3,12 @@ extends ../layout
 block content
   .row
     .grid-1-2
+      h2 Pages
       each page in pages
         div
           a(href='/admin/page/edit/#{page._id}')= page.title
     .grid-1-2
+      h2 Entry
       each entry in entries
         div
           a(href='/admin/entry/edit/#{entry._id}')= entry.title

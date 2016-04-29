@@ -3,15 +3,24 @@ html
   head
     title=(title ? title : 'JRH Portfolio')
     link(rel='stylesheet' href='/styles_bundle.css')
-  body(class=(isHome ? 'is-home' : '') style!=(page ? page.pageBgCSS : ''))
-    .wrapper.row
+  body(class=(isIndex ? 'is-home' : undefined) style!=(page ? page.pageBgCSS : undefined))
+    .row
       .grid-1-1
-        .header(class=(isHome ? 'header--home' : ''))
+        -if(!isIndex) {
+        .header(class=(isIndex ? 'header--home' : undefined))
           nav.header__nav
-            a(href='/').header__logo
-              img(src='svg')
+            a(href='/').header__logo-link
+              img(src='/main/images/logo.svg').header__logo
             -if(pageList && pageList.length) {
             each page in pageList
-              a(href='/page/#{page.title}').header__nav-item= page.title
+              a(href='/page/#{page.title}' data-css='#{page.pageBgCSS}').header__nav-item.js-headerNavItem= page.title
             -}
+        -}
         block content
+        
+        block earlyScripts
+        
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js')
+        script(src='/layout_bundle.js')
+        
+        block lateScripts

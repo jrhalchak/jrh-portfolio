@@ -24,7 +24,7 @@ export default {
                 test: /\.js?/,
                 loader: 'babel-loader',
                 presets: ['es2015', 'react'],
-                exclude: /node_modules/
+                //exclude: /node_modules/
             },
             {
                 test: /\.sass$/,
@@ -62,6 +62,6 @@ export default {
         ],
         // "import 'file'" instead of "import 'file.js'"
         modulesDirectories: ['node_modules','./public/main/javascripts/shared','./public/main/javascripts/entries/modules','./public/main/stylesheets'],
-        extensions: ['', '.js', '.scss']
+        extensions: ['', '.js', '.jsx', '.scss']
     }
 };

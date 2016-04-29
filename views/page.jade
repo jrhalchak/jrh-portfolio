@@ -2,3 +2,21 @@ extends layout
 
 block content
   div!= page.body
+  -if(page.pageType.toLowerCase() == 'entries') {
+  .row
+    .grid-1-2
+      .js-entriesAppContainer
+    .grid-1-2
+      div fancy chart here?
+  -}
+
+block earlyScripts
+  -if(page.pageType.toLowerCase() == 'entries') {
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.js')
+  -}
+
+block lateScripts
+  -if(page.pageType.toLowerCase() == 'entries') {
+    script(src='/entries_bundle.js')
+  -}

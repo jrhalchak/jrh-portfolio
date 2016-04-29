@@ -17,7 +17,7 @@ router.get('/', helpers.isAuthenticated, function(req, res, next) {
         if(err) console.log(err);
         viewModel.pages = pageResults;
         viewModel.entries = entryResults;
-        res.render('admin/index', viewModel); 
+        res.render('admin/index', viewModel);
     });
   });
 });
@@ -59,7 +59,7 @@ router.get('/entry/edit/:id', helpers.isAuthenticated, (req,res,next)=>{
       res.status(404).send('Not found!');
       return;
     } else {
-      viewModel.pages[0] = result;
+      viewModel.entries[0] = result;
       res.render('admin/edit_entry', viewModel);
     }
   });

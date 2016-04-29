@@ -1,5 +1,4 @@
-import test from './modules/test-module';
-
 // for external integration with charting use https://api.github.com/search/repositories?q=%20+fork:true+user:jrhalchak
+import appController from './modules/entries-controller';
 
-test();
+appController.initApp($('.js-entriesAppContainer')[0]);

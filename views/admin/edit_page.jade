@@ -12,4 +12,5 @@ block content
         option(value='entries' selected=(pages[0].pageType == 'entries' ? true : undefined)) Entries
     label(for='page_bg_css') Page Background CSS Property
       input(id='page_bg_css' name='page_bg_css' value= pages[0].pageBgCSS)
-    button(type='submit') Update!
+      button(type='submit').u-mRight15 Update!
+      button(onclick='javascript:window.history.back()') Cancel

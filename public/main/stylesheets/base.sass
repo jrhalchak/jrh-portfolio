@@ -1,15 +1,72 @@
 // base styles
-body
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+*, *:before, *:after
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
+
+body
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  background-color: #f2f2f2
+
+  &.is-home
+    color: #fff
+    background-color: #16A8CC
+    a
+      color: #eee
+    &:after
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      content: ''
+      display: block
+      opacity: 0.5
+      z-index: -1
+      background-image: url('/main/images/IMG_2720.jpg')
+      background-size: cover
+      background-position: 20% 50%
+
 a
   color: #00b7ff
 
 h1,h2,h3,h4,h5,h6
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial
+  margin: 0
 
 h1
   font-size: 320%
   text-transform: uppercase
+  &:first-of-type
+    margin: 0.3em 0
+
+label
+  display: block
+  margin: 15px 0
+  input, textarea, select
+    display: block
+    width: 100%
+    padding: 5px
+    border: 1px solid #ddd
+
+button, .button
+  font-family: 'Montserrat'
+  border-radius: 5px
+  padding: 5px 10px
+  background: #ddd
+  display: inline-block
+  color: #777
+  border: none
+  box-shadow: 0 2px 0 0 #ccc, 0 3px 5px 0 rgba(0,0,0,0.2)
+  cursor: pointer
+  &:hover
+    box-shadow: 0 2px 0 0 #CCC, 0 5px 15px 0 rgba(0,0,0,0.3)
+    background: #eee
+
+button[type='submit']
+  background: #16A8CC
+  color: #fff
+  box-shadow: 0 2px 0 0 darken(#16A8CC, 10%), 0 3px 5px 0 rgba(0,0,0,0.2)
+  &:hover
+    box-shadow: 0 2px 0 0 darken(#16A8CC, 10%), 0 5px 15px 0 rgba(0,0,0,0.3)
+    background: lighten(#16ABCC, 10%)

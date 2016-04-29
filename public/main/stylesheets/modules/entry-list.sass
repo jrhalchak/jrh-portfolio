@@ -1,0 +1,65 @@
+.entry-list
+  list-style: none
+  padding-left: 0
+  margin: 0
+  &, & *
+    -webkit-transition: all 0.3s ease
+    -moz-transition: all 0.3s ease
+    transition: all 0.3s ease
+  &__item
+    margin: 0 0 15px 0
+    background: #fff
+    color: #555
+    border-radius: 2px
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.3)
+    max-height: 100px
+    &:after
+      content: ''
+      display: table
+      clear: both
+    &:hover
+      box-shadow: 0 5px 20px 0 rgba(0,0,0,0.4)
+      //transform: scale(1.05,1.05)
+  &__title
+    padding: 5px
+    border-bottom: 1px solid #ddd
+  &__image
+    float: left
+    height: 100px
+    width: 100px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+  &__item-content
+    float: left
+    width: calc(100% - 100px)
+  &__body
+    max-height: 4em
+    padding: 5px
+  &__more-button
+    background: #16A8CC
+    display: inline-block
+    padding: 3px 5px
+    border-radius: 5px
+    color: #fff
+    float: right
+    box-shadow: 0 2px 0 0 darken(#16A8CC, 10%), 0 3px 5px 0 rgba(0,0,0,0.2)
+    cursor: pointer
+    margin-right: 15px
+    &:hover
+      box-shadow: 0 2px 0 0 darken(#16A8CC, 10%), 0 5px 15px 0 rgba(0,0,0,0.3)
+      background: lighten(#16ABCC, 10%)
+
+.entry-list__item.is-active
+  max-height: 3000%
+  &:hover
+    transform: scale(1,1)
+  .entry-list__image
+    width: 100%
+    height: 400px
+    float: none
+  .entry-list__item-content
+    width: 100%
+    float: none
+  .entry-list__body
+    max-height: 3000%

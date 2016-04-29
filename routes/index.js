@@ -28,6 +28,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/login', helpers.sendUserToApp, (req, res) => {
+  viewModel.page = null;
+  viewModel.isIndex = false;
   // Redirect to login/home if
   res.render('login', viewModel);
 });
@@ -44,6 +46,7 @@ router.get('/signout', (req, res) => {
 });
 
 router.get('/page/:pageTitle', (req, res)=>{
+  viewModel.isIndex = false;
   providers.page.getPageByTitle(req.params.pageTitle, (err, result)=> {
     if(err) console.log(err);
     if(!result) {

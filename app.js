@@ -12,6 +12,7 @@ import db from './db';
 
 import routes from './routes/index';
 import admin from './routes/admin';
+import api from './routes/api';
 
 var app = express();
 
@@ -39,8 +40,9 @@ app
 
 // Routes
 app
-.use('/', routes)
-  .use('/admin', admin);
+  .use('/', routes)
+  .use('/admin', admin)
+  .use('/api', api);
 
 
 // catch 404 and forward to error handler
