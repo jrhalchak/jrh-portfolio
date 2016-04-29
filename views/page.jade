@@ -1,12 +1,12 @@
 extends layout
 
 block content
+  div!= page.body
   -if(page.pageType.toLowerCase() == 'entries') {
   .row
     .grid-1-2
       .js-entriesAppContainer
     .grid-1-2
-      div!= page.body
       canvas(width='500' height='500').js-commitsChart
   -}
 
