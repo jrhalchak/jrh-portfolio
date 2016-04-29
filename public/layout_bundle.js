@@ -60,7 +60,10 @@
 	  var $body = $('body'),
 	      $homeBg = $('.js-homeBG'),
 	      $3d = $('.js-logo3dEffect');
+
 	  $body.on('mousemove', function (e) {
+	    if ($(window).width() <= 768) return;
+
 	    var cx = Math.ceil($body.width() / 2.0),
 	        cy = Math.ceil($body.height() / 2.0),
 	        dx = event.pageX - cx,

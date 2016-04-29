@@ -244,6 +244,30 @@ button[type='submit'] {
     background-size: calc(100% + 50px);
     background-position: 20% 50%; }
 
+@media screen and (max-width: 768px) {
+  .layout__content {
+    height: auto; }
+  .layout__logo-container, .layout__logo-menu-container, .layout__logo {
+    height: 50vh; }
+  .layout__home-bg {
+    background-size: cover; }
+  .layout__menu {
+    border-radius: 10px;
+    background: #fff;
+    height: auto; }
+    .layout__menu:hover {
+      height: auto;
+      border-radius: 10px; }
+    .layout__menu-button {
+      display: none; }
+    .layout__menu-item-container {
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+      display: block; }
+    .layout__menu-item {
+      display: block; } }
+
 .header {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
   border-bottom: 1px solid rgba(200, 200, 200, 0.5); }

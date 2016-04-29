@@ -107,3 +107,30 @@
     background-image: url('/main/images/IMG_2720.jpg')
     background-size: calc(100% + 50px)
     background-position: 20% 50%
+
+
+@media screen and (max-width: 768px)
+  .layout
+    &__content
+      height: auto
+    &__logo-container, &__logo-menu-container, &__logo
+      height: 50vh
+    &__home-bg
+      background-size: cover
+    &__menu
+      border-radius: 10px
+      background: #fff
+      height: auto
+      &:hover
+        height: auto
+        border-radius: 10px
+      &-button
+        display: none
+
+      &-item-container
+        height: auto
+        visibility: visible
+        opacity: 1
+        display: block
+      &-item
+        display: block
