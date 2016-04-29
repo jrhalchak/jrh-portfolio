@@ -30,9 +30,23 @@
     background-size: cover
     background-repeat: no-repeat
     background-position: center center
+    position: relative
+    &-links
+      display: none
+      position: absolute
+      bottom: 0
+      right: 0
+      background: #fff
+      a //naughty
+        padding: 5px 10px
   &__item-content
     float: left
     width: calc(100% - 100px)
+    &:after
+      display: table
+      clear: both
+      content: ''
+
   &__body
     max-height: 4em
     padding: 5px
@@ -58,8 +72,12 @@
     width: 100%
     height: 400px
     float: none
+    &-links
+      display: block
   .entry-list__item-content
     width: 100%
     float: none
   .entry-list__body
     max-height: 3000%
+  .entry-list__more-button
+    margin-bottom: 15px

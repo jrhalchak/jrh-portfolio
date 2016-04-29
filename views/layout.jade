@@ -4,25 +4,30 @@ html
     title=(title ? title : 'JRH Portfolio')
     link(rel='stylesheet' href='/styles_bundle.css')
   body(class=(isIndex ? 'is-home' : undefined) style!=(page ? page.pageBgCSS : undefined))
-    -if(!isIndex) {
-    .header
+    .js-siteWrapper
+      -if(!isIndex) {
+      .header
+        .row
+          .grid-1-1
+              nav.header__nav
+                a(href='/').header__logo-link
+                  img(src='/main/images/logo.svg').header__logo
+                -if(pageList && pageList.length) {
+                each page in pageList
+                  a(href='/page/#{page.title}' data-css='#{page.pageBgCSS}').header__nav-item.js-headerNavItem= page.title
+                -}  
+      -} else {
+      .layout__home-bg.js-homeBG
+      -}
       .row
         .grid-1-1
-            nav.header__nav
-              a(href='/').header__logo-link
-                img(src='/main/images/logo.svg').header__logo
-              -if(pageList && pageList.length) {
-              each page in pageList
-                a(href='/page/#{page.title}' data-css='#{page.pageBgCSS}').header__nav-item.js-headerNavItem= page.title
-              -}  
-    -}
-    .row
-      .grid-1-1
-        block content
-        
-        block earlyScripts
-        
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js')
-        script(src='/layout_bundle.js')
-        
-        block lateScripts
+          block content
+          
+    block laterContent
+    
+    block earlyScripts
+    
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js')
+    script(src='/layout_bundle.js')
+    
+    block lateScripts

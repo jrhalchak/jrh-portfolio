@@ -4,6 +4,10 @@
   -moz-box-sizing: border-box
   box-sizing: border-box
 
+html, body
+  margin: 0
+  padding: 0
+
 body
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
   background-color: #f2f2f2
@@ -11,24 +15,9 @@ body
   &.is-home
     color: #fff
     background-color: #16A8CC
-    a
-      color: #eee
-    &:after
-      position: absolute
-      top: 0
-      left: 0
-      right: 0
-      bottom: 0
-      content: ''
-      display: block
-      opacity: 0.5
-      z-index: -1
-      background-image: url('/main/images/IMG_2720.jpg')
-      background-size: cover
-      background-position: 20% 50%
-
+    
 a
-  color: #00b7ff
+  color: #ccc
 
 h1,h2,h3,h4,h5,h6
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial

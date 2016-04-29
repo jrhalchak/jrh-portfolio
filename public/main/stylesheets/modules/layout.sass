@@ -1,8 +1,109 @@
 // layout module
 //.layout
 //.layout__container
+.layout
+  -webkit-perspective: 1000
+  position: relative
 
-.layout__large-logo
-  max-width: 100%
-  margin: 0 auto
-  display: block
+  &__content
+    height: 200px
+    padding: 30px
+    background: #222
+
+  &__header
+    font-weight: 200
+    text-transform: none
+
+  &__logo-effect-container
+    -webkit-transform-style: preserve-3d;
+
+  &__logo-container, &__logo-menu-container, &__logo
+    height: calc(100vh - 200px)
+
+  &__logo
+    transform: translateZ(20px)
+
+  &__menu
+    position: absolute
+    top: 50%
+    left: 50%
+    height: 160px
+    transform: translateY(-50%) translateX(-50%) translateZ(60px)
+    z-index: 99999
+    border-radius: 80px
+    background: #16A8CC
+    width: 160px
+    height: 160px
+    box-shadow: 0 0 50px 0 rgba(255,255,255,1)
+    transition: all 0.3s ease
+
+    &-button
+      width: 160px
+      height: 160px
+      border-radius: 80px
+      position: relative
+      top: 0
+      left: 0
+      transition: all 0.3s ease
+      margin: 0 auto
+      &:before
+        content: '≡'
+        position: absolute
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        text-align: center
+        font-size: 80px
+        line-height: 160px
+
+    &-item-container
+      position: relative
+      visibility: hidden
+      line-height: 60px
+      display: table
+      width: 100%
+    &-item
+      font-family: 'Montserrat'
+      color: #16A8CC
+      display: table-cell
+      padding: 0 30px
+      text-align: center
+
+  &__menu:hover
+    border-radius: 60px
+    height: 60px
+    width: 50%
+    box-shadow: 0 10px 40px 0 rgba(0,0,0,0.4)
+    background: #f2f2f2
+    .layout__menu-button
+      width: 0
+      height: 0
+      visibility: hidden
+      opacity: 0
+      &:after
+        display: none
+    .layout__menu-item-container
+      visibility: visible
+      opacity: 1
+
+  &__logo-image
+    width: 100%
+    margin: 0 auto
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    display: block
+
+  &__home-bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: block
+    opacity: 0.6
+    z-index: -1
+    background-image: url('/main/images/IMG_2720.jpg')
+    background-size: calc(100% + 50px)
+    background-position: 20% 50%

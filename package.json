@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "startDev": "nodemon ./bin/www --ignore public/",
+    "startDev": "nodemon ./bin/www -e js,jade --ignore public/",
     "build": "webpack -p -d",
     "buildDev": "webpack --watch"
   },

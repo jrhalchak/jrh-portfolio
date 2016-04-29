@@ -1,6 +1,22 @@
 extends layout
 
 block content
-  h1 Hi, I'm Jonathan.
-  h2 A web application developer who loves Javascript and doesn't hate design.
-  img(src='main/images/logo.svg').layout__large-logo
+  .layout
+    .layout__logo-container
+      .layout__effect-container.js-logo3dEffect
+        .layout__menu
+          .layout__menu-button
+          .layout__menu-item-container
+            -if(pageList && pageList.length) {
+            each page in pageList
+              a(href='/page/#{page.title}' data-css='#{page.pageBgCSS}').layout__menu-item= page.title
+            -}  
+        .layout__logo
+          img(src='main/images/logo.svg').layout__logo-image
+    
+block laterContent
+  .layout__content
+    .row
+      .grid-1-1
+        h1.layout__header Hi, I'm Jonathan.
+        h2 A web application developer who loves Javascript and doesn't hate design.
