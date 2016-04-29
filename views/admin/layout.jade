@@ -4,13 +4,14 @@ html
     title JRH Portfolio Admin
     link(rel='stylesheet' href='/styles_bundle.css')
   body
+    .header
+      .row
+        .grid-1-1
+            nav.header__nav
+              a(href='/').header__logo-link
+                img(src='/main/images/logo.svg').header__logo
+              a(href='/admin').header__nav-item Admin Home
+              a(href='/signout').u-floatRight.header__nav-item Sign Out
     .row
       .grid-1-1
-        .header
-          nav.header__nav
-            a(href='/').header__logo-link
-              img(src='/main/images/logo.svg').header__logo
-            a(href='/admin').header__nav-item Admin Home
-            a(href='/signout').u-floatRight.header__nav-item Sign Out
-        -}
         block content
