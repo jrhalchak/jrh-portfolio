@@ -2,6 +2,7 @@ doctype
 html
   head
     title=(title ? title : 'JRH Portfolio')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='/styles_bundle.css')
   body(class=(isIndex ? 'is-home' : undefined) style!=(page ? page.pageBgCSS : undefined))
     .js-siteWrapper
